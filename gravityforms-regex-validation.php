@@ -29,7 +29,7 @@ class GF_RegEx {
     if ( $position == 375 ) {
       ?>
       <li class="regex_setting field_setting">
-        <input type="checkbox" id="field_regex_validation" onclick="SetFieldProperty('regexValidation', this.checked); ToggleInputRegEx()" onkeypress="SetFieldProperty('regexValidation', this.checked); ToggleInputRegEx()" />
+        <input type="checkbox" id="field_regex_validation" onclick="SetFieldProperty('regexValidation', this.checked); ToggleInputRegEx()" onkeydown="SetFieldProperty('regexValidation', this.checked); ToggleInputRegEx()" />
         <label for="field_regex_validation" class="inline">
           <?php _e("Use Regular Expression Validation", "gf_regex"); ?>
         </label>
