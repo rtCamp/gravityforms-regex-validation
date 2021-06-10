@@ -31,7 +31,7 @@ class GF_RegEx {
       <li class="regex_setting field_setting">
         <input type="checkbox" id="field_regex_validation" onclick="SetFieldProperty('regexValidation', this.checked); ToggleInputRegEx()" onkeydown="SetFieldProperty('regexValidation', this.checked); ToggleInputRegEx()" />
         <label for="field_regex_validation" class="inline">
-          <?php _e("Use Regular Expression Validation", "gf_regex"); ?>
+          <?php esc_html_e("Use Regular Expression Validation", "gf_regex"); ?>
         </label>
         
         <div id="field_regex_pattern_container" style="padding-top: 10px; display: block;">
