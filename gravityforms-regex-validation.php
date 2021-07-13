@@ -53,8 +53,10 @@ class GF_RegEx {
   public function editor_script() {
     ?>
     <script type='text/javascript'>
-      // adding setting to fields of type "text"
+      // adding setting to fields of type "text" (Single Line Text)
       fieldSettings.text += ", .regex_setting";
+      // adding setting to fields of type "textarea" (Paragraph Text)
+      fieldSettings.textarea += ", .regex_setting";
 
       // binding to the load field settings event to initialize the checkbox
       jQuery(document).bind("gform_load_field_settings", function(event, field, form) {
@@ -83,7 +85,7 @@ class GF_RegEx {
   public function validate($result, $value, $form, $field) {
     // if validation has passed so far, and regex validation is enabled, and a pattern was provided, and a value was provided
     if ($result['is_valid'] && $field['regexValidation'] && !empty($field['regexPattern']) && !empty($value)) {
-      $regex = '/' . $field['regexPattern'] . '/';
+      $regex = '/' . $field['regexPattern'] . '/s';
       if (preg_match($regex, $value) !== 1) {
         $result['is_valid'] = false;
         
